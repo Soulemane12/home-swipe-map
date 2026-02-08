@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/listings",
+      "destination": "/api/rentcast"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

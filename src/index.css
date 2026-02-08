@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SwipeHouse - Warm, inviting real estate theme */
+    --background: 30 25% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Warm coral - inviting, homey */
+    --primary: 8 85% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft cream secondary */
+    --secondary: 35 30% 95%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - soft teal for balance */
+    --accent: 175 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success green for saved/liked */
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warm red for pass */
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 8 85% 62%;
+
+    --radius: 1rem;
+
+    /* Custom shadows */
+    --shadow-card: 0 4px 20px -4px hsl(220 15% 15% / 0.08);
+    --shadow-card-hover: 0 8px 30px -4px hsl(220 15% 15% / 0.12);
+    --shadow-elevated: 0 20px 60px -15px hsl(220 15% 15% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 30 20% 95%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 8 85% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 30 20% 90%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 175 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 8 85% 62%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Serif', serif;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .elevated-shadow {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .swipe-card {
+    @apply bg-card rounded-2xl overflow-hidden card-shadow transition-shadow duration-300;
+  }
+
+  .swipe-card:hover {
+    @apply card-shadow-hover;
+  }
+}
+
+/* Mapbox overrides */
+.mapboxgl-popup-content {
+  @apply !rounded-xl !p-0 !shadow-lg overflow-hidden;
+}
+
+.mapboxgl-popup-close-button {
+  @apply !text-foreground !text-xl !p-2 !right-1 !top-1;
+}
+
+.mapboxgl-ctrl-logo {
+  @apply !hidden;
+}
